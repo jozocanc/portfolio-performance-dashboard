@@ -176,7 +176,7 @@ with overview:
         xaxis_title=None,
         yaxis_title="Value (CHF)",
         legend_title=None,
-        plot_bgcolor="white",
+        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
         hovermode="x unified",
     )
     fig.update_xaxes(showgrid=False)
@@ -265,7 +265,7 @@ with performance:
         height=380,
         margin=dict(l=10, r=10, t=10, b=10),
         yaxis_title="Return (%)",
-        plot_bgcolor="white",
+        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
         hovermode="x unified",
     )
     fig.update_yaxes(gridcolor="#EEF0F3")
@@ -309,7 +309,7 @@ with risk:
         height=320,
         margin=dict(l=10, r=10, t=10, b=10),
         yaxis_title="Drawdown (%)",
-        plot_bgcolor="white",
+        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)",
     )
     fig_dd.update_yaxes(gridcolor="#EEF0F3")
     st.plotly_chart(fig_dd, use_container_width=True)
@@ -321,7 +321,7 @@ with risk:
         fig_rv = px.line(rv, color_discrete_sequence=[ACCENT])
         fig_rv.update_layout(
             height=320, margin=dict(l=10, r=10, t=10, b=10),
-            plot_bgcolor="white", showlegend=False, yaxis_title="Vol (%)",
+            plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", showlegend=False, yaxis_title="Vol (%)",
         )
         fig_rv.update_yaxes(gridcolor="#EEF0F3")
         st.plotly_chart(fig_rv, use_container_width=True)
@@ -331,7 +331,7 @@ with risk:
         fig_rs = px.line(rs, color_discrete_sequence=[ACCENT])
         fig_rs.update_layout(
             height=320, margin=dict(l=10, r=10, t=10, b=10),
-            plot_bgcolor="white", showlegend=False, yaxis_title="Sharpe",
+            plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", showlegend=False, yaxis_title="Sharpe",
         )
         fig_rs.update_yaxes(gridcolor="#EEF0F3")
         st.plotly_chart(fig_rs, use_container_width=True)
@@ -342,7 +342,7 @@ with risk:
     )
     fig_hist.update_layout(
         height=300, margin=dict(l=10, r=10, t=10, b=10),
-        plot_bgcolor="white", showlegend=False,
+        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", showlegend=False,
         xaxis_title="Daily return (%)", yaxis_title="Frequency",
     )
     fig_hist.update_yaxes(gridcolor="#EEF0F3")
@@ -379,7 +379,7 @@ with allocation:
     fig_f = px.bar(by_ccy, x="currency", y="weight", text_auto=".1%",
                    color_discrete_sequence=[ACCENT])
     fig_f.update_layout(height=300, margin=dict(l=10, r=10, t=10, b=10),
-                        plot_bgcolor="white", yaxis_tickformat=".0%")
+                        plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", yaxis_tickformat=".0%")
     fig_f.update_yaxes(gridcolor="#EEF0F3")
     st.plotly_chart(fig_f, use_container_width=True)
 
