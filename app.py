@@ -45,15 +45,17 @@ ACCENT = "#0B3D91"
 st.markdown(
     f"""
 <style>
-.block-container {{ padding-top: 1.4rem; padding-bottom: 3rem; max-width: 1280px; }}
-h1, h2, h3 {{ color: {CHARCOAL}; letter-spacing: -0.01em; }}
-h1 {{ font-weight: 700; }}
-[data-testid="stMetricValue"] {{ font-weight: 600; color: {CHARCOAL}; }}
-[data-testid="stMetricLabel"] {{ color: {MUTED}; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; }}
+.block-container {{ padding-top: 3.5rem; padding-bottom: 3rem; max-width: 1280px; }}
+h1 {{ font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.25rem; }}
+h3 {{ letter-spacing: -0.01em; }}
+.eam-title {{ font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 0.2rem 0; line-height: 1.15; }}
+.eam-sub {{ font-size: 1.05rem; font-weight: 400; margin: 0 0 0.5rem 0; opacity: 0.85; }}
+[data-testid="stMetricLabel"] {{ text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.06em; opacity: 0.7; }}
 .stTabs [data-baseweb="tab-list"] {{ gap: 0.25rem; }}
 .stTabs [data-baseweb="tab"] {{ padding: 0.5rem 1rem; font-weight: 500; }}
-hr {{ border-color: #E5E7EB; margin: 1rem 0; }}
-.small-caption {{ color: {MUTED}; font-size: 0.82rem; }}
+.small-caption {{ font-size: 0.82rem; opacity: 0.7; }}
+.mandate-label {{ font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.6; }}
+.mandate-value {{ font-weight: 600; font-size: 1.1rem; }}
 </style>
     """,
     unsafe_allow_html=True,
@@ -83,9 +85,10 @@ prices, weights, securities = _load_all()
 # -- header ----------------------------------------------------------------
 left, right = st.columns([0.7, 0.3])
 with left:
-    st.markdown("### EAM Client Reporting")
+    st.markdown("<div class='eam-title'>EAM Client Reporting</div>", unsafe_allow_html=True)
     st.markdown(
-        "#### Swiss-core multi-asset mandate · Monthly performance review"
+        "<div class='eam-sub'>Swiss-core multi-asset mandate · Monthly performance review</div>",
+        unsafe_allow_html=True,
     )
     st.markdown(
         f"<span class='small-caption'>Prepared by Jozo Cancar · Data: Yahoo Finance · "
@@ -94,12 +97,12 @@ with left:
     )
 with right:
     st.markdown(
-        f"<div style='text-align:right; margin-top:1.2rem;'>"
-        f"<div style='color:{MUTED}; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;'>Mandate</div>"
-        f"<div style='font-weight:600; font-size:1.1rem;'>Swiss Balanced · CHF</div></div>",
+        "<div style='text-align:right; margin-top:0.5rem;'>"
+        "<div class='mandate-label'>Mandate</div>"
+        "<div class='mandate-value'>Swiss Balanced · CHF</div></div>",
         unsafe_allow_html=True,
     )
-st.markdown("---")
+st.markdown("<div style='margin: 1rem 0; border-bottom: 1px solid rgba(128,128,128,0.2);'></div>", unsafe_allow_html=True)
 
 # -- sidebar controls ------------------------------------------------------
 with st.sidebar:
