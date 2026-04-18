@@ -11,6 +11,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+from src.data_pipeline import DB_PATH, refresh_all
 from src.metrics import (
     beta_alpha,
     cumulative,
@@ -59,8 +60,17 @@ hr {{ border-color: #E5E7EB; margin: 1rem 0; }}
 
 
 # -- data loading ----------------------------------------------------------
+@st.cache_data(ttl=60 * 60 * 12)
+def _bootstrap_db() -> None:
+    """Populate SQLite from yfinance if missing (first run / fresh deploy)."""
+    if not DB_PATH.exists() or DB_PATH.stat().st_size < 1024:
+        with st.spinner("Loading market data (one-time setup, ~30 seconds)..."):
+            refresh_all(period="5y")
+
+
 @st.cache_data(ttl=60 * 60)
 def _load_all():
+    _bootstrap_db()
     prices = load_prices()
     weights = load_weights()
     secs = load_securities().set_index("ticker")
