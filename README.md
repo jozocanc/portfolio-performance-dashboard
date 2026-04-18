@@ -63,8 +63,8 @@ ubs-eam-dashboard/
 ## Run locally
 
 ```bash
-git clone https://github.com/jozocanc/ubs-eam-dashboard.git
-cd ubs-eam-dashboard
+git clone https://github.com/jozocanc/portfolio-performance-dashboard.git
+cd portfolio-performance-dashboard
 pip install -r requirements.txt
 python -m src.data_pipeline     # pulls ~22k price rows into SQLite
 streamlit run app.py
