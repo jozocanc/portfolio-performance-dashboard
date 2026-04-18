@@ -1,14 +1,14 @@
 # EAM Client Reporting Dashboard
 
 A production-style performance and risk dashboard modeled on the kind of
-reporting an **External Asset Manager (EAM)** serviced through a Swiss private
-bank (e.g., UBS FIM Client Services) would deliver to end clients.
+reporting an **External Asset Manager (EAM)** serviced through a Swiss
+private bank would deliver to end clients.
 
 Built end-to-end in Python: ingestion, storage, analytics, and a live
 Streamlit front end. Swiss blue-chip core, regional ETF diversification,
 benchmark-relative attribution, risk analytics, and a client-facing UI.
 
-**Live demo:** _deployed link added after first build_
+**Live demo:** **[jozo-portfolio-dashboard.streamlit.app](https://jozo-portfolio-dashboard.streamlit.app/)**
 
 ---
 

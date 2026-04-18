@@ -1,7 +1,8 @@
 """EAM Client Reporting Dashboard — Streamlit.
 
 Designed as a client-reporting tool an External Asset Manager could hand to an
-end client. Mirrors the kind of analytics UBS FIM Client Services supports.
+end client. Mirrors the kind of analytics a Swiss private bank's financial
+intermediaries / client-services desk would support.
 """
 
 from __future__ import annotations
